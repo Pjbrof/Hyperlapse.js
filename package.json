@@ -1,0 +1,46 @@
+{
+  "name": "Hyperlapse.js",
+  "version": "2.0.0",
+  "description": "JavaScript hyper-lapse utility for Google Street View",
+  "main": "src/hyperlapse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hyperlapse"
+  ],
+  "author": "Patrick Brophy",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-bower": "0.0.13",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.1.0",
+    "gulp-csslint": "^0.3.1",
+    "gulp-jsdoc": "^0.1.5",
+    "gulp-jsdoc3": "^0.3.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-wiredep": "0.0.0",
+    "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "karma": "^1.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-safari-launcher": "^1.0.0",
+    "pump": "^1.0.1",
+    "sassdoc": "^2.1.20"
+  }
+}

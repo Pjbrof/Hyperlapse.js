@@ -2,19 +2,13 @@
 
 ### JavaScript hyper-lapse utility for Google Street View.
 
-![image](https://s3.amazonaws.com/tllabs.hyperlapse/hyperlapse.gif)
-
 This library was written to create dynamic hyper-lapse (time-lapse with movement) sequences using Google Street View. 
-
-[See it action.](http://hyperlapse.tllabs.io)
-
-[Read about this project.](http://www.teehanlax.com/labs/hyperlapse/)
 
 [Video of what's possible.](https://vimeo.com/63653873)
 
 ## Example
 
-[Simple example](http://tllabs.io/hyperlapse/examples/simple.html)
+[View Demo(load time is ~30-60sec)](http://bostonmarathonmediaguide.com/hyperlapse)
 
 ```js
 var hyperlapse = new Hyperlapse(document.getElementById('pano'), {
@@ -58,15 +52,21 @@ directions_service.route(route.request, function(response, status) {
 
 ## Dependencies
 
-- [Three.js](https://github.com/mrdoob/three.js) (r57)
+- [Three.js](https://github.com/mrdoob/three.js) (r78)
 - a modified version of [GSVPano.js](https://github.com/pnitsch/GSVPano.js)
 - [Google Maps API v3.12](https://developers.google.com/maps/documentation/javascript/3.exp/reference)
 
   
 ## API Docs 
   
-[API Documentation](http://tllabs.io/hyperlapse/docs/Hyperlapse.html)
-  
+[API Documentation]()
+
+## Todo
+
+Add functions from marathon hyperlapse to hyperlapse.js
+Example with customizable Start and End
+Modify GSVPano with new version of Google StreetView API
+Dropdown for all Abbott Marathon races
 
 ## License
 

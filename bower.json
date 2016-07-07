@@ -1,0 +1,26 @@
+{
+  "name": "Hyperlapse.js",
+  "description": "JavaScript hyper-lapse utility for Google Street View",
+  "main": "src/hyperlapse.js",
+  "authors": [
+    "Patrick Brophy"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "hyperlapse"
+  ],
+  "homepage": "https://github.com/Pjbrof/Hyperlapse.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "examples/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "GSVPano": "https://github.com/pnitsch/GSVPano.js",
+    "three.js": "threejs#*"
+  }
+}

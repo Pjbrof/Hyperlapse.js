@@ -4,6 +4,9 @@
 .Spotlight-V100
 .Trashes
 
+node_modules
+examples/libs
+
 examples/tool.html
 examples/ransac.html
 examples/feat.html

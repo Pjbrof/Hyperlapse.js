@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Documentation Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Documentation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Hyperlapse.html">Hyperlapse</a></li><li><a href="HyperlapsePoint.html">HyperlapsePoint</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Hyperlapse.html#event:onError">Hyperlapse#event:onError</a></li><li><a href="Hyperlapse.html#event:onFrame">Hyperlapse#event:onFrame</a></li><li><a href="Hyperlapse.html#event:onLoadCanceled">Hyperlapse#event:onLoadCanceled</a></li><li><a href="Hyperlapse.html#event:onLoadComplete">Hyperlapse#event:onLoadComplete</a></li><li><a href="Hyperlapse.html#event:onLoadProgress">Hyperlapse#event:onLoadProgress</a></li><li><a href="Hyperlapse.html#event:onPause">Hyperlapse#event:onPause</a></li><li><a href="Hyperlapse.html#event:onPlay">Hyperlapse#event:onPlay</a></li><li><a href="Hyperlapse.html#event:onRouteComplete">Hyperlapse#event:onRouteComplete</a></li><li><a href="Hyperlapse.html#event:onRouteProgress">Hyperlapse#event:onRouteProgress</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+		<div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1><strong>Hyperlapse.js</strong></h1><h3>JavaScript hyper-lapse utility for Google Street View.</h3><p>This library was written to create dynamic hyper-lapse (time-lapse with movement) sequences using Google Street View. </p>
+<p><a href="https://vimeo.com/63653873">Video of what's possible.</a></p>
+<h2>Example</h2><p><a href="http://bostonmarathonmediaguide.com/hyperlapse">View Demo(load time is ~30-60sec)</a></p>
+<pre class="prettyprint source lang-js"><code>var hyperlapse = new Hyperlapse(document.getElementById('pano'), {
+    lookat: new google.maps.LatLng(37.81409525128964,-122.4775045005249),
+    zoom: 1,
+    use_lookat: true,
+    elevation: 50
+});
+
+hyperlapse.onError = function(e) {
+    console.log(e);
+};
+
+hyperlapse.onRouteComplete = function(e) {
+    hyperlapse.load();
+};
+
+hyperlapse.onLoadComplete = function(e) {
+    hyperlapse.play();
+};
+
+// Google Maps API stuff here...
+var directions_service = new google.maps.DirectionsService();
+
+var route = {
+    request:{
+        origin: new google.maps.LatLng(37.816480000000006,-122.47825,37),
+        destination: new google.maps.LatLng(37.81195,-122.47773000000001),
+        travelMode: google.maps.DirectionsTravelMode.DRIVING
+    }
+};
+
+directions_service.route(route.request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+        hyperlapse.generate( {route:response} );
+    } else {
+        console.log(status);
+    }
+});</code></pre><h2>Dependencies</h2><ul>
+<li><a href="https://github.com/mrdoob/three.js">Three.js</a> (r78)</li>
+<li>a modified version of <a href="https://github.com/pnitsch/GSVPano.js">GSVPano.js</a></li>
+<li><a href="https://developers.google.com/maps/documentation/javascript/3.exp/reference">Google Maps API v3.12</a></li>
+</ul>
+<h2>API Docs</h2><p><a href="">API Documentation</a></p>
+<h2>Todo</h2><p>Add functions from marathon hyperlapse to hyperlapse.js
+Example with customizable Start and End
+Modify GSVPano with new version of Google StreetView API
+Dropdown for all Abbott Marathon races</p>
+<h2>License</h2><p>The MIT License</p>
+<p>Copyright (c) 2013 Teehan+Lax</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p></article>
+    </section>
+
+
+
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        hyperlapse.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Hyperapse.js - JavaScript hyper-lapse utility for Google Street View.</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Peter Nitsch</li>
+			</ul>
+	</dd>
+	
+
+	
+	<dt class="tag-copyright method-doc-label method-doc-details-label">Copyright:</dt>
+	<dd class="tag-copyright">
+		<ul class="dummy">
+			<li>Teehan+Lax 2013</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+<div class="modal fade" id="searchResults">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Search results</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	
+		on July 7th 2016, 5:29:51 pm
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		SearcherDisplay.init();
+	});
+</script>
+
+</body>
+</html>

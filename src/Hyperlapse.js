@@ -790,4 +790,16 @@ var Hyperlapse = function(container, params) {
 			drawMaterial();
 		}
 	};
+
+	/**
+	 * Display any frame 
+	 * @param {number} pointInd - frame index
+	 * @fires Hyperlapse#onFrame
+	 */
+	this.gotoPoint = function(pointInd) {
+	    self.pause();
+
+	    _point_index = pointInd;
+	    drawMaterial();
+	};
 };
